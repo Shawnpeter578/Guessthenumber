@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guess the Number Game</title>
+  <style>
+    body {
+      background-color: #111;
+      color: #0f0;
+      font-family: monospace;
+      text-align: center;
+      padding: 20px;
+    }
+    pre {
+      font-size: 12px;
+      white-space: pre;
+    }
+    input, button {
+      font-size: 16px;
+      padding: 5px 10px;
+      margin: 10px;
+    }
+    #message {
+      margin-top: 15px;
+      font-size: 18px;
+      color: yellow;
+    }
+  </style>
+</head>
+<body>
+  <pre>
+                                                   _.,:=-,,cccedbec.
+                             ,                 .e$P"ud$$$$$$$$$$$$$$bc.
+                          `. ,              .d$$":d$$$$$$$$$$$$$$$$$$$$b.
+                        ~-. ,uee$$$$$eu .,d$$P",d$$$$$$$$$$$$$$$$$$$$$$$$L
+                         .d$$$$$$$$$$$$$h`",ue$$$$$$$$$$$$$$<$$$$$$$$$$$$$
+                        d$$$$$$$$$$$$$$$$$c`$$$$$$$$$$$$$$$>d$$$$$$$$$$$F
+                       ,$$$$$$$$$$$$$$$$$$$b.?$$$$$$$$$$$$$<$$$$$$$$$P"
+                 .,ze$$$$$$$$$$$$$$$$$$$$$uu$ $$$$$$$$$$$$F<$$$$$$P"
+         .ue=+==""",,"?$$$$$$$??$$$$$$$$$$$$$b`$$$$$$$$$$$$>$$$$$F
+       z=',ed$$$$$$$$$$$$$$$$F $6$$$$$$$$$$$$$.?$$$$$$$$$$$h<$$$$
+    ,d",$$$$$$$$$$$$$$$$$$$$$b$$$$$$$$$$$$$",`$c"$$$$$$$$$$$h<$$$,
+   zF,$$$$$$$$$$$$$$$$$$$"$$$$$$F?$$$$$$$$$'  $$h'$$$$$$$$$$$$><$$
+  dS$$$$$$$$$$$$$$$$$$$$$.$$$$$$$ r "$$$$$$bud$$F $$$$$$$$$$$$$b$$h
+ d$$$$$$$$$$$$$$$$$$$$$$$b`$$$$$$b. u$$$$$$$$$c( <$$$$$$$$$$$$$$$$$h
+J$$$$$$$$$$$$$$$$$$$$$$$$$h`$$$$$$$$$$$$$$$$$$$$$beu`"?$$$$$$$$$$$$$L
+$$$$$$$$$$$$$$$$$$$$$$$$$$$b``"???$PF+==-,"??$$$$$$$$$$b,?$$$$$$$$$$$
+`$$$$$$$$$$$$$$$$$$$$$$$$$$$<$$$$buu$$$$$$$$$ cecececc,??b`$$$$$$$$$$
+  "?$$$$$$$$$$$$$$FJ$$$$$$$F<$$$$$$$$$$$$$$$$ $$$$$$$$$b$bud$$$$$$$$$
+     '"$$$$$$$$$$FJ$$$$$$$$'d$$$$$$$$$$$$$$$$ $$$$$$$$$$$$$$$$$$$$$$F
+        3$$$$$$$Fd$$$$$$$$",$$$$$$$$$$$"$$$$F `$$$$$$$$$$$$$$$$$$$$$
+        d$$$$$$$d$$$$$$$F.d$$$$$ $$$P"=2$$$$    ?$$$$$$$$$$$$$$$$$$
+      z$$$$$$$$$$3$$$P",d$$$$$$F P" =J$$$$$F     `?$$$$$$$$$$$$$P"
+    u$$$$$$$$$$$L$$"   $$$$$$$$    `$6R?==?          ""???????"
+    $$$$$$$$$$$$$$     3$bec:/      '$$CCLL
+     ?$$$$$$$$$$$$b.   =?$??$+     :d???$??b.
+        `"""""""""""   "  ""''"      '"  "
+  </pre>
+
+  <h2>WELCOME TO "GUESS THE NUMBER GAME"</h2>
+  <p>Guess the correct number you win or else you lose</p>
+
+  <input type="number" id="userInput" placeholder="Enter your number">
+  <button onclick="checkGuess()">Submit</button>
+
+  <div id="message"></div>
+
+  <script>
+    const sec_num = 3; // secret number
+
+    function checkGuess() {
+      let user = parseInt(document.getElementById("userInput").value);
+      let msg = "";
+
+      if (user === sec_num) {
+        msg = "🎉 WOW! you won the game";
+      } else if (user > 10) {
+        msg = "Number is too high";
+      } else if (user < 2) {
+        msg = "Number is too low";
+      } else {
+        msg = "❌ Try again!";
+      }
+
+      document.getElementById("message").textContent = msg;
+    }
+  </script>
+</body>
+</html>
